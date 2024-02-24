@@ -31,6 +31,11 @@ return {
         information = "",
       })
     end)
+    -- Some stuff does not work in FreeBSD yet
+    if os == 'FreeBSD' then
+      opts.ensure_installed = vim.tbl_filter(function(e) return e == 'marksman' or  e =='clangd' end, opts.ensure_installed)
+      vim.fn.extend(opts.automatic_installation.exclude, { "clangd" })
+    end
 
     require("mason-lspconfig").setup({
       ensure_installed = opts.ensure_installed,
