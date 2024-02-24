@@ -1,3 +1,13 @@
+local function build_cmd(cmd)
+  if type(cmd) == 'string' then
+   vim.system(cmd):wait()
+  elseif type(cmd) == 'table' then
+    for _, item in ipairs(cmd) do
+      vim.system(item):wait()
+    end
+  end
+end
+
 return {
   "nvim-telescope/telescope.nvim",
   cmd = "Telescope",
@@ -27,7 +37,20 @@ return {
     "nvim-telescope/telescope-file-browser.nvim",
     {
       "nvim-telescope/telescope-fzf-native.nvim",
-      build = "gmake",
+      build = function()
+        local os = vim.loop.os_uname().sysname
+        local cmd =  {"make"}
+        if os == 'Windows_NT' then
+          cmd = {
+            "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release",
+            "cmake --build build --config Release",
+            "cmake --install build --prefix build",
+          }
+        elseif os == 'FreeBSD' then
+          cmd = { "gmake" }
+        end
+        build_cmd(cmd)
+      end,
     },
   },
   keys = {
