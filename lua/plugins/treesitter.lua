@@ -2,6 +2,9 @@ return {
   "nvim-treesitter/nvim-treesitter",
   lazy = true,
   event = { "BufReadPost", "BufNewFile" },
+  dependencies = {
+    "HiPhish/nvim-ts-rainbow2",
+  },
   opts = {
     ensure_installed = {
       "bash", "regex",
@@ -14,9 +17,10 @@ return {
       "markdown", "markdown_inline",
     },
     auto_install = true,
-    highlight = { enable = true },
-    incremental_selection = { enable = true },
-    indent = { enable = true },
+    highlight = { enable = true, },
+    incremental_selection = { enable = true, },
+    indent = { enable = true, },
+    rainbow = { enable = true, },
   },
   build = ":TSUpdate",
   config = function(_, opts)
