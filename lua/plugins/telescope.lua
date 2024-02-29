@@ -12,6 +12,11 @@ return {
   "nvim-telescope/telescope.nvim",
   cmd = "Telescope",
   opts = {
+    extensions = {
+      "file_browser",
+      "noice",
+      "fzf",
+    },
     defaults = {
       initial_mode = "normal",
       sorting_strategy = "ascending",
@@ -34,6 +39,7 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
+    "nvim-telescope/telescope-frecency.nvim",
     "nvim-telescope/telescope-file-browser.nvim",
     {
       "nvim-telescope/telescope-fzf-native.nvim",
@@ -60,14 +66,15 @@ return {
     { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Opened buffers" },
     { "<leader>nl", "<cmd>Telescope noice<cr>", desc = "View notifications" },
     { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
+    { "<leader>fc", "<cmd>Telescope frecency<cr>", desc = "Recent files" },
   },
   config = function(_, opts)
     local telescope = require("telescope")
 
     telescope.setup(opts)
-    telescope.load_extension("file_browser")
-    telescope.load_extension("noice")
-    telescope.load_extension("fzf")
+    for _, ext in ipairs(opts.extensions) do
+      telescope.load_extension(ext)
+    end
   end,
   init = function()
     vim.api.nvim_create_autocmd("VimEnter", {
