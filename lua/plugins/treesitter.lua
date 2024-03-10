@@ -7,14 +7,14 @@ return {
   },
   opts = {
     ensure_installed = {
-      "bash", "regex",
-      "rust", "toml",
+      "bash", "regex", "fish", "elixir", "eex", "proto",
+      "rust", "toml", "python", "erlang", "capnp",
       "c", "cpp", "make", "meson", "ninja", "cmake",
       "comment", "dockerfile", "gitcommit", "gitignore",
       "gitattributes", "git_rebase", "git_config",
       "lua", "luap", "luadoc", "json", "json5",
       "kdl", "vimdoc", "vim", "xml", "yaml",
-      "markdown", "markdown_inline",
+      "markdown", "markdown_inline", "gpg",
     },
     auto_install = true,
     highlight = { enable = true, },
