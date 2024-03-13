@@ -18,9 +18,6 @@ return {
       "gopls", "jsonls", "lua_ls", "marksman",
       "neocmake", "yamlls", "typst_lsp",
     },
-    automatic_installation = {
-      exclude = { "rust_analyzer" },
-    },
   },
   config = function(_, opts)
     require("neodev").setup()
@@ -49,11 +46,19 @@ return {
       vim.fn.extend(opts.automatic_installation.exclude, { "clangd" })
     end
 
+    -- Capabilities for rustacean
+    vim.g.rustaceanvim = {
+      server = {
+        capabilities = lsp_zero.get_capabilities(),
+      }
+    }
+
     require("mason-lspconfig").setup({
       ensure_installed = opts.ensure_installed,
       automatic_installation = opts.automatic_installation,
       handlers = {
         lsp_zero.default_setup,
+        rust_analyzer = lsp_zero.noop,
       }
     })
   end,

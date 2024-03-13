@@ -1,6 +1,9 @@
 return {
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",
+  keys = {
+    { "<c-s>", function() vim.lsp.buf.signature_help() end, desc = "Show signature" },
+  },
   dependencies = {
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-nvim-lsp",
