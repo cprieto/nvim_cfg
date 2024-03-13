@@ -1,9 +1,15 @@
 return {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
+  dependencies = {
+    {
+      "lukas-reineke/lsp-format.nvim",
+      config = true,
+    }
+  },
   keys = {
     { "<leader>ca", vim.lsp.buf.code_action, desc = "Code actions" },
-    { "<leader>cr", vim.lsp.buf.rename, desc = "Rename symbol" },
+    { "<leader>cr", vim.lsp.buf.rename,      desc = "Rename symbol" },
   },
   opts = {
     ensure_installed = {
@@ -22,18 +28,24 @@ return {
     local lsp_zero = require("lsp-zero")
     lsp_zero.extend_lspconfig()
 
-    lsp_zero.on_attach(function(_, bufn)
+    lsp_zero.on_attach(function(client, bufn)
       lsp_zero.default_keymaps({ buffer = bufn })
+
       lsp_zero.set_sign_icons({
-        error = "",
-        warning = "",
-        hint = "",
-        information = "",
+        error = '✘',
+        warn = '▲',
+        hint = '⚑',
+        info = '»'
       })
+
+      if client.supports_method("textDocument/formatting") then
+        require("lsp-format").on_attach(client)
+      end
     end)
     -- Some stuff does not work in FreeBSD yet
     if os == 'FreeBSD' then
-      opts.ensure_installed = vim.tbl_filter(function(e) return e == 'marksman' or  e =='clangd' end, opts.ensure_installed)
+      opts.ensure_installed = vim.tbl_filter(function(e) return e == 'marksman' or e == 'clangd' end,
+        opts.ensure_installed)
       vim.fn.extend(opts.automatic_installation.exclude, { "clangd" })
     end
 
@@ -46,4 +58,3 @@ return {
     })
   end,
 }
-

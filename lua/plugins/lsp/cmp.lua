@@ -20,10 +20,11 @@ return {
       completion = { border = "rounded" },
     },
     sources = {
-      { name = "nvim_lsp", keyword_length = 1 },
-      { name = "treesitter", keyword_length = 1 },
-      { name = "buffer", keyword_length = 3 },
-      { name = "nvim_lua", keyword_length = 1 },
+      { name = "nvim_lsp",               keyword_length = 1 },
+      { name = "nvim_lsp_signature_help" },
+      { name = "treesitter",             keyword_length = 1 },
+      { name = "nvim_lua",               keyword_length = 1 },
+      { name = "buffer",                 keyword_length = 3 },
     },
   },
   config = function(_, opts)
@@ -31,7 +32,7 @@ return {
     lsp_zero.extend_cmp()
 
     local cmp = require("cmp")
-    -- Extend opts with required configuration
+
     cmp.setup(vim.fn.extend(opts, {
       mapping = {
         ["<cr>"] = cmp.mapping.confirm({ select = false }),
