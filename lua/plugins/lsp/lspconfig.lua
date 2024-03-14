@@ -38,6 +38,11 @@ return {
       if client.supports_method("textDocument/formatting") then
         require("lsp-format").on_attach(client)
       end
+
+      -- Support for navic
+      if client.server_capabilities.documentSymbolProvider then
+        require("nvim-navic").attach(client, bufn)
+      end
     end)
     -- Some stuff does not work in FreeBSD yet
     if os == 'FreeBSD' then
