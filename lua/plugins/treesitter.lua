@@ -4,7 +4,6 @@ return {
   event = { "BufReadPost", "BufNewFile" },
   dependencies = {
     "HiPhish/nvim-ts-rainbow2",
-    "nvim-treesitter/nvim-treesitter-context",
   },
   opts = {
     ensure_installed = {
