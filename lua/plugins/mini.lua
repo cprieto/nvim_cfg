@@ -13,5 +13,6 @@ return {
     require("mini.cursorword").setup()
     require("mini.statusline").setup()
     require("mini.tabline").setup()
+    require("mini.pairs").setup()
   end,
 }
