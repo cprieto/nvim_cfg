@@ -2,7 +2,10 @@ return {
   "echasnovski/mini.nvim",
   event = { "BufReadPost", "BufNewFile" },
   dependencies = {
-    "lewis6991/gitsigns.nvim",
+    {
+      "lewis6991/gitsigns.nvim",
+      config = true,
+    },
     "nvim-tree/nvim-web-devicons",
   },
   version = "*",
