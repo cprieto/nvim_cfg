@@ -4,6 +4,5 @@ return {
   version = "*",
   config = function()
     require("mini.cursorword").setup()
-    require("mini.animate").setup()
   end,
 }
