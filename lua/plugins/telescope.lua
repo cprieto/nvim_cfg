@@ -1,3 +1,6 @@
+local function hello()
+end
+
 return {
   "nvim-telescope/telescope.nvim",
   cmd = "Telescope",
@@ -50,13 +53,13 @@ return {
     },
   },
   keys = {
-    { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
+    { "<leader>ff", "<cmd>Telescope find_files<cr>",   desc = "Find files" },
     { "<leader>fe", "<cmd>Telescope file_browser<cr>", desc = "File browser" },
-    { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent files" },
-    { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Opened buffers" },
-    { "<leader>nl", "<cmd>Telescope noice<cr>", desc = "View notifications" },
-    { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
-    { "<leader>fc", "<cmd>Telescope frecency<cr>", desc = "Recent files" },
+    { "<leader>fr", "<cmd>Telescope oldfiles<cr>",     desc = "Recent files" },
+    { "<leader>fb", "<cmd>Telescope buffers<cr>",      desc = "Opened buffers" },
+    { "<leader>nl", "<cmd>Telescope noice<cr>",        desc = "View notifications" },
+    { "<leader>fg", "<cmd>Telescope live_grep<cr>",    desc = "Live grep" },
+    { "<leader>fc", "<cmd>Telescope frecency<cr>",     desc = "Recent files" },
   },
   config = function(_, opts)
     local telescope = require("telescope")
