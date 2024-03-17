@@ -1,3 +1,7 @@
+local components = {
+  "cursorword", "statusline", "tabline", "pairs", "comment",
+}
+
 return {
   "echasnovski/mini.nvim",
   event = { "BufReadPost", "BufNewFile" },
@@ -10,10 +14,8 @@ return {
   },
   version = "*",
   config = function()
-    require("mini.cursorword").setup()
-    require("mini.statusline").setup()
-    require("mini.tabline").setup()
-    require("mini.pairs").setup()
-    require("mini.comment").setup()
+    for _, comp in ipairs(components) do
+      require("mini." .. comp).setup()
+    end
   end,
 }

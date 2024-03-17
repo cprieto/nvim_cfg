@@ -1,5 +1,0 @@
---[[
-return {
-  event = { "BufReadPost", "BufNewFile" },
-}
---]]
