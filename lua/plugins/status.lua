@@ -22,6 +22,7 @@ return {
       "Lazy",
       "quickfix",
       "trouble",
+      "toggleterm",
     },
     winbar = {
       lualine_c = {
