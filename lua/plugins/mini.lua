@@ -1,5 +1,5 @@
 local components = {
-  "cursorword", "statusline", "tabline", "pairs", "comment",
+  "cursorword", "tabline", "pairs", "comment",
 }
 
 return {

@@ -50,3 +50,4 @@ vim.g.loaded_python3_provider = 0
 opt.termguicolors = true
 opt.cursorline = true
 opt.mouse = "a"
+opt.laststatus = 3
