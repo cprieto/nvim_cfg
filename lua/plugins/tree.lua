@@ -3,7 +3,7 @@ return {
   config = true,
   branch = "v3.x",
   keys = {
-    { "<leader>tt", "<cmd>Neotree<cr>", desc = "Show tree file" },
+    { "<leader>ee", "<cmd>Neotree<cr>", desc = "Show tree file" },
   },
   dependencies = {
     "nvim-lua/plenary.nvim",

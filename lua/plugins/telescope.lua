@@ -1,3 +1,13 @@
+local function init()
+  vim.api.nvim_create_autocmd("VimEnter", {
+    callback = function()
+      if vim.fn.argv(0) == '' then
+        require("telescope").extensions.file_browser.file_browser()
+      end
+    end,
+  })
+end
+
 return {
   "nvim-telescope/telescope.nvim",
   cmd = "Telescope",
@@ -66,13 +76,5 @@ return {
       telescope.load_extension(ext)
     end
   end,
-  init = function()
-    vim.api.nvim_create_autocmd("VimEnter", {
-      callback = function()
-        if vim.fn.argv(0) == '' then
-          require("telescope").extensions.file_browser.file_browser()
-        end
-      end,
-    })
-  end,
+  -- init = init,
 }
