@@ -15,7 +15,7 @@ return {
       section_separators = { left = '', right = '' },
       component_separators = { left = '', right = '' },
       disabled_filetypes = { 'TelescopePrompt' },
-      theme = "jellybeans",
+      theme = 'tokyonight',
     },
     extensions = {
       "nvim-tree",

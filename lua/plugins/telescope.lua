@@ -1,6 +1,3 @@
-local function hello()
-end
-
 return {
   "nvim-telescope/telescope.nvim",
   cmd = "Telescope",

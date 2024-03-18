@@ -2,6 +2,11 @@ return {
   "nvim-tree/nvim-tree.lua",
   config = true,
   keys = {
-    { "<leader>ee", "<cmd>NvimTreeToggle<cr>", desc = "Show/hide file tree" },
-  }
+    { "<leader>tt", "<cmd>NvimTreeToggle<cr>", desc = "Show/hide file tree" },
+  },
+  opts = {
+    filters = {
+      custom = { "^.git$" },
+    },
+  },
 }
