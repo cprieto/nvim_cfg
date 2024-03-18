@@ -1,12 +1,14 @@
 return {
-  "nvim-tree/nvim-tree.lua",
+  "nvim-neo-tree/neo-tree.nvim",
   config = true,
+  branch = "v3.x",
   keys = {
-    { "<leader>tt", "<cmd>NvimTreeToggle<cr>", desc = "Show/hide file tree" },
+    { "<leader>tt", "<cmd>Neotree<cr>", desc = "Show tree file" },
   },
-  opts = {
-    filters = {
-      custom = { "^.git$" },
-    },
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-tree/nvim-web-devicons",
+    "MunifTanjim/nui.nvim",
   },
+  event = { "VimEnter" },
 }

@@ -18,7 +18,10 @@ return {
       theme = 'tokyonight',
     },
     extensions = {
-      "nvim-tree",
+      "neo-tree",
+      "Lazy",
+      "quickfix",
+      "trouble",
     },
     winbar = {
       lualine_c = {
