@@ -1,10 +1,6 @@
-local function init()
-  vim.api.nvim_create_autocmd("VimEnter", {
-    callback = function()
-      if vim.fn.argv(0) == '' then
-        require("telescope").extensions.file_browser.file_browser()
-      end
-    end,
+local function buffers()
+  require("telescope.builtin").buffers({
+    sort_mru = true,
   })
 end
 
@@ -63,7 +59,7 @@ return {
     { "<leader>ff", "<cmd>Telescope find_files<cr>",   desc = "Find files" },
     { "<leader>fe", "<cmd>Telescope file_browser<cr>", desc = "File browser" },
     { "<leader>fr", "<cmd>Telescope oldfiles<cr>",     desc = "Recent files" },
-    { "<leader>fb", "<cmd>Telescope buffers<cr>",      desc = "Opened buffers" },
+    { "<leader>fb", buffers,                           desc = "Opened buffers" },
     { "<leader>nl", "<cmd>Telescope noice<cr>",        desc = "View notifications" },
     { "<leader>fg", "<cmd>Telescope live_grep<cr>",    desc = "Live grep" },
     { "<leader>fc", "<cmd>Telescope frecency<cr>",     desc = "Recent files" },
