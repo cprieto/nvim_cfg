@@ -13,7 +13,7 @@ return {
       numbers = "ordinal",
       always_show_bufferline = true,
       diagnostics = "nvim_lsp",
-      separator_style = "slant",
+      separator_style = "thick",
       offsets = {
         {
           filetype = "neo-tree",
