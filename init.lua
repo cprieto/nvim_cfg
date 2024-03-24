@@ -56,3 +56,4 @@ opt.mouse = "a"
 
 -- Special options
 opt.laststatus = 3
+opt.termguicolors = true

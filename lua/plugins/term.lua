@@ -1,9 +1,9 @@
 return {
   "akinsho/toggleterm.nvim",
   config = true,
+  lazy = true,
   version = "*",
   keys = {
-    { "<leader>tt", "<cmd>ToggleTerm<cr>", desc = "Show terminal split" },
-    { "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", desc = "Show terminal split" },
+    { "<C-t>", "<cmd>ToggleTerm direction=float<cr>", desc = "Show terminal split" },
   }
 }
