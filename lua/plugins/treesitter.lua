@@ -14,7 +14,7 @@ return {
       "gitattributes", "git_rebase", "git_config",
       "lua", "luap", "luadoc", "json", "json5",
       "kdl", "vimdoc", "vim", "xml", "yaml",
-      "markdown", "markdown_inline", "gpg",
+      "markdown", "markdown_inline", "gpg", "typst",
     },
     auto_install = true,
     highlight = { enable = true, },
