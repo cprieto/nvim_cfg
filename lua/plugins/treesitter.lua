@@ -3,7 +3,12 @@ return {
   lazy = true,
   event = { "BufReadPost", "BufNewFile" },
   dependencies = {
-    "HiPhish/nvim-ts-rainbow2",
+    {
+      "hiphish/rainbow-delimiters.nvim",
+      config = function()
+        require("rainbow-delimiters.setup").setup()
+      end,
+    }
   },
   opts = {
     ensure_installed = {
@@ -15,6 +20,7 @@ return {
       "lua", "luap", "luadoc", "json", "json5",
       "kdl", "vimdoc", "vim", "xml", "yaml",
       "markdown", "markdown_inline", "gpg", "typst",
+      "go", "gomod", "gosum", "gotmpl", "gowork",
     },
     auto_install = true,
     highlight = { enable = true, },
