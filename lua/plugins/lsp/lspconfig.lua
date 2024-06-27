@@ -17,6 +17,7 @@ return {
       "docker_compose_language_service", "dockerls",
       "gopls", "jsonls", "lua_ls", "marksman",
       "neocmake", "yamlls", "typst_lsp",
+      "gopls",
     },
   },
   config = function(_, opts)

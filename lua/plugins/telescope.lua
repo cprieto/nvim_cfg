@@ -59,7 +59,6 @@ return {
     { "<leader>ff", "<cmd>Telescope find_files<cr>",   desc = "Find files" },
     { "<leader>fe", "<cmd>Telescope file_browser<cr>", desc = "File browser" },
     { "<leader>fr", "<cmd>Telescope oldfiles<cr>",     desc = "Recent files" },
-    { "<leader>fb", buffers,                           desc = "Opened buffers" },
     { "<leader>nl", "<cmd>Telescope noice<cr>",        desc = "View notifications" },
     { "<leader>fg", "<cmd>Telescope live_grep<cr>",    desc = "Live grep" },
     { "<leader>fc", "<cmd>Telescope frecency<cr>",     desc = "Recent files" },
@@ -71,6 +70,8 @@ return {
     for _, ext in ipairs(opts.extensions) do
       telescope.load_extension(ext)
     end
+
+    vim.cmd [[autocmd User TelescopePreviewerLoaded setlocal number]]
   end,
   -- init = init,
 }
