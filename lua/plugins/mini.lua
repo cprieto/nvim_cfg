@@ -1,21 +1,28 @@
-local components = {
-  "cursorword", "pairs", "comment",
-}
-
 return {
-  "echasnovski/mini.nvim",
-  event = { "BufReadPost", "BufNewFile" },
-  dependencies = {
-    {
-      "lewis6991/gitsigns.nvim",
-      config = true,
-    },
-    "nvim-tree/nvim-web-devicons",
+  {
+    "echasnovski/mini.cursorword",
+    version = '*',
+    config = true,
+    events = { "BufReadPost", "BufNewFile" },
   },
-  version = "*",
-  config = function()
-    for _, comp in ipairs(components) do
-      require("mini." .. comp).setup()
-    end
-  end,
+  {
+    "echasnovski/mini.pairs",
+    version = "*",
+    config = true,
+    events = { "BufReadPost", "BufNewFile" },
+  },
+  {
+    "echasnovski/mini.comment",
+    version = "*",
+    config = true,
+    events = { "BufReadPost", "BufNewFile" },
+  },
+  {
+    "echasnovski/mini.icons",
+    version = "false",
+    config = function()
+      require('mini.icons').setup()
+      MiniIcons.mock_nvim_web_devicons()
+    end,
+  }
 }

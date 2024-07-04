@@ -34,7 +34,6 @@ return {
   },
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons",
     "nvim-telescope/telescope-frecency.nvim",
     "nvim-telescope/telescope-file-browser.nvim",
     {

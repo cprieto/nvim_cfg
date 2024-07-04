@@ -1,8 +1,5 @@
 return {
   "ibhagwan/fzf-lua",
-  dependencies = {
-    "nvim-tree/nvim-web-devicons",
-  },
   event = { "BufReadPre", "BufNewFile" },
   keys = {
     -- LSP move
