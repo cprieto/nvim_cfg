@@ -18,14 +18,6 @@ return {
       theme = 'tokyonight',
 
     },
-    sections = {
-      lualine_a = {
-        { "mode", separator = { left = "", }, right_padding = 2 },
-      },
-      lualine_z = {
-        { "location", separator = { right = "" } },
-      }
-    },
     extensions = {
       "neo-tree",
       "Lazy",

@@ -13,6 +13,10 @@ return {
       numbers = "ordinal",
       always_show_bufferline = true,
       diagnostics = "nvim_lsp",
+      diagnostics_indicator = function(count, level, _, _)
+        local icon = level:match("error") and " " or " "
+        return " " .. icon .. count
+      end,
       separator_style = "thick",
       offsets = {
         {
