@@ -2,7 +2,8 @@ return {
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",
   keys = {
-    { "<c-s>", function() vim.lsp.buf.signature_help() end, desc = "Show signature" },
+    { "<c-s>",      function() vim.lsp.buf.signature_help() end,                               desc = "Show signature" },
+    { "<leader>hh", function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.enable()) end, desc = "Show/hide inlay hints" },
   },
   dependencies = {
     "hrsh7th/cmp-buffer",

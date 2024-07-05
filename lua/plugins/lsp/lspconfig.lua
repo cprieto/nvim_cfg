@@ -9,7 +9,7 @@ return {
   },
   keys = {
     { "<leader>ca", vim.lsp.buf.code_action, desc = "Code actions" },
-    { "<leader>cr", vim.lsp.buf.rename,      desc = "Rename symbol" },
+    { "<leader>rr", vim.lsp.buf.rename,      desc = "Rename symbol" },
   },
   opts = {
     ensure_installed = {
