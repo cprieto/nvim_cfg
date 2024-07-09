@@ -9,6 +9,9 @@ return {
       },
       config = true,
     },
+    {
+      "letieu/harpoon-lualine",
+    }
   },
   opts = {
     options = {
@@ -16,7 +19,6 @@ return {
       component_separators = { left = '', right = '' },
       disabled_filetypes = { 'TelescopePrompt' },
       theme = 'tokyonight',
-
     },
     extensions = {
       "neo-tree",
@@ -24,6 +26,12 @@ return {
       "quickfix",
       "trouble",
       "toggleterm",
+    },
+    sections = {
+      lualine_c = {
+        "filename",
+        "harpoon2",
+      }
     },
     winbar = {
       lualine_c = {
