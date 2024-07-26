@@ -17,33 +17,9 @@ return {
         mason = true,
         neotree = true,
         noice = true,
+        lsp_trouble = true,
+        which_key = true,
       }
     },
   },
-  -- {
-  --   "rebelot/kanagawa.nvim",
-  --   lazy = true,
-  -- },
-  -- {
-  --   "neanias/everforest-nvim",
-  --   lazy = true,
-  -- },
-  -- {
-  --   "ribru17/bamboo.nvim",
-  --   lazy = true,
-  -- },
-  -- {
-  --   "uloco/bluloco.nvim",
-  --   lazy = true,
-  -- },
-  -- {
-  --   "zaldih/themery.nvim",
-  --   lazy = false,
-  --   config = true,
-  --   priority = 1000,
-  --   opts = {
-  --     themes = { "tokyonight", "catppuccin", "everforest", "kanagawa", "bamboo", "bluloco" },
-  --     livePreview = true,
-  --   },
-  -- }
 }

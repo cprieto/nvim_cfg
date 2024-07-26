@@ -27,4 +27,7 @@ return {
     },
   },
   event = { "VimEnter" },
+  keys = {
+    { "<leader>`", function() require("bufferline").pick() end, desc = "Pick an opened buffer" },
+  }
 }
