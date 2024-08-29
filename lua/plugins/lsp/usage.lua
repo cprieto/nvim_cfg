@@ -62,6 +62,7 @@ local function text_format(symbol)
   return res
 end
 
+--[[
 return {
   "Wansmer/symbol-usage.nvim",
   event = "LspAttach",
@@ -70,3 +71,6 @@ return {
   },
   config = true,
 }
+]] --
+
+return {}

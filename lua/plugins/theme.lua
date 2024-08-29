@@ -1,4 +1,5 @@
-return {
+--return {
+local nope = {
   {
     "catppuccin/nvim",
     lazy = false,
@@ -22,4 +23,11 @@ return {
       }
     },
   },
+}
+
+return {
+  "sontungexpt/witch",
+  priority = 1000,
+  lazy = false,
+  config = true,
 }
