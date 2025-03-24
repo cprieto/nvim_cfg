@@ -1,33 +1,19 @@
---return {
-local nope = {
-  {
-    "catppuccin/nvim",
-    lazy = false,
-    priority = 1000,
-    name = "catppuccin",
-    config = function(_, opts)
-      require("catppuccin").setup(opts)
-      vim.cmd [[colorscheme catppuccin]]
-    end,
-    opts = {
-      flavour = "macchiato",
-      integrations = {
-        harpoon = true,
-        headlines = true,
-        markdown = true,
-        mason = true,
-        neotree = true,
-        noice = true,
-        lsp_trouble = true,
-        which_key = true,
+return {
+  "catppuccin/nvim",
+  priority = 1000,
+  lazy = false,
+  opts = {
+    integrations = {
+      blink_cmp = true,
+      mason = true,
+      noice = true,
+      snacks = {
+        enabled = true,
       }
     },
   },
-}
-
-return {
-  "sontungexpt/witch",
-  priority = 1000,
-  lazy = false,
-  config = true,
+  config = function(_, opts)
+    require('catppuccin').setup(opts)
+    vim.cmd [[colorscheme catppuccin-mocha]]
+  end,
 }

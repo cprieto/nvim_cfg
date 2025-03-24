@@ -1,36 +1,49 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   lazy = true,
-  event = { "BufReadPost", "BufNewFile" },
   dependencies = {
     {
       "hiphish/rainbow-delimiters.nvim",
-      config = function()
-        require("rainbow-delimiters.setup").setup()
+      opts = {
+        highlight = {
+          'RainbowDelimiterYellow',
+          'RainbowDelimiterBlue',
+          'RainbowDelimiterOrange',
+          'RainbowDelimiterGreen',
+          'RainbowDelimiterViolet',
+          'RainbowDelimiterCyan',
+        },
+      },
+      config = function(_, opts)
+        require("rainbow-delimiters.setup").setup(opts)
       end,
     }
   },
+  event = { "BufReadPost", "BufNewFile" },
+  build = ":TSUpdate",
   opts = {
     ensure_installed = {
-      "bash", "regex", "fish", "elixir", "eex", "proto",
-      "rust", "toml", "python", "erlang", "capnp",
-      "c", "cpp", "make", "meson", "ninja", "cmake",
-      "comment", "dockerfile", "gitcommit", "gitignore",
-      "gitattributes", "git_rebase", "git_config",
-      "lua", "luap", "luadoc", "json", "json5",
-      "kdl", "vimdoc", "vim", "xml", "yaml",
-      "markdown", "markdown_inline", "gpg", "typst",
-      "go", "gomod", "gosum", "gotmpl", "gowork",
+      "rust", "lua", "vimdoc", "toml",
+      "cpp", "c", "go", "gosum", "gomod",
+      "gowork", "make", "tera", "markdown",
+      "markdown_inline", "fish",
     },
     auto_install = true,
-    highlight = { enable = true, },
-    incremental_selection = { enable = true, },
-    indent = { enable = true, },
-    rainbow = { enable = true, },
+    rainbow = { enable = true },
+    highlight = { enable = true },
+    indent = { enable = true },
+    incremental_selection = {
+      enable = true,
+      keymaps = {
+        init_selection = "gnn", -- set to `false` to disable one of the mappings
+        node_incremental = "grn",
+        scope_incremental = "grc",
+        node_decremental = "grm",
+      },
+    },
   },
-  build = ":TSUpdate",
   config = function(_, opts)
-    local config = require("nvim-treesitter.configs")
-    config.setup(opts)
+    local configs = require("nvim-treesitter.configs")
+    configs.setup(opts)
   end,
 }
