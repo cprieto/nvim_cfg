@@ -12,6 +12,7 @@ return {
     keymap = {
       preset = "enter"
     },
+    signature = { enabled = true },
     completion = {
       menu = {
         border = "single",

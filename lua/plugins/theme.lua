@@ -1,19 +1,12 @@
 return {
-  "catppuccin/nvim",
+  "folke/tokyonight.nvim",
   priority = 1000,
   lazy = false,
   opts = {
-    integrations = {
-      blink_cmp = true,
-      mason = true,
-      noice = true,
-      snacks = {
-        enabled = true,
-      }
-    },
+    style = "night",
   },
   config = function(_, opts)
-    require('catppuccin').setup(opts)
-    vim.cmd [[colorscheme catppuccin-mocha]]
+    require("tokyonight").setup(opts)
+    vim.cmd [[colorscheme tokyonight]]
   end,
 }

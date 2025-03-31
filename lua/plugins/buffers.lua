@@ -13,14 +13,7 @@ return {
       }
     }
   },
-  config = function(_, opts)
-    local setup = require('bufferline').setup
-    vim.api.nvim_create_autocmd({ "BufAdd", "BufDelete" }, {
-      callback = function()
-        vim.schedule(function()
-          pcall(setup, opts)
-        end)
-      end,
-    })
-  end,
+  keys = {
+    { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete current buffer" },
+  }
 }
