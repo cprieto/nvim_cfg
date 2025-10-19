@@ -1,28 +1,26 @@
 return {
-  {
-    "echasnovski/mini.cursorword",
-    version = '*',
-    config = true,
-    events = { "BufReadPost", "BufNewFile" },
-  },
-  {
-    "echasnovski/mini.pairs",
-    version = "*",
-    config = true,
-    events = { "BufReadPost", "BufNewFile" },
-  },
-  {
-    "echasnovski/mini.comment",
-    version = "*",
-    config = true,
-    events = { "BufReadPost", "BufNewFile" },
-  },
-  {
-    "echasnovski/mini.icons",
-    version = "false",
-    config = function()
-      require('mini.icons').setup()
-      MiniIcons.mock_nvim_web_devicons()
-    end,
-  }
+    {
+        "nvim-mini/mini.animate",
+        event = "VeryLazy",
+        cond = vim.g.neovide == nil,
+    },
+    {
+        "nvim-mini/mini.icons",
+        lazy = true,
+        opts = {
+            file = {
+                [".keep"] = { glyph = "󰊢", hl = "MiniIconsGrey" },
+                ["devcontainer.json"] = { glyph = "", hl = "MiniIconsAzure" },
+            },
+            filetype = {
+                dotenv = { glyph = "", hl = "MiniIconsYellow" },
+            },
+        },
+        init = function()
+            package.preload["nvim-web-devicons"] = function()
+                require("mini.icons").mock_nvim_web_devicons()
+                return package.loaded["nvim-web-devicons"]
+            end
+        end,
+    },
 }

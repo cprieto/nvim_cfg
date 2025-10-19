@@ -14,8 +14,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   { import = "plugins" },
-  { import = "plugins.lsp" }
 })
+
+-- Enable lsp
+require('langs').enable_lsp()
 
 -- Gutter
 opt.number = true
