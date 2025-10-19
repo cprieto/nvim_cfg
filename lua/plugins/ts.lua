@@ -3,7 +3,12 @@ return {
     branch = 'main',
     build = ':TSUpdate',
     lazy = false,
-    config = function(opts)
+    config = function()
+        if not vim.fn.executable('tree-sitter') then
+          vim.notify("tree-sitter cli is not installed\nyou need it for tree-sitter grammars", vim.log.levels.ERROR)
+          return
+        end
+
         local ts = require('nvim-treesitter')
         ts.setup()
 
