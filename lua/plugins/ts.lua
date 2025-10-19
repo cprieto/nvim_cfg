@@ -10,14 +10,10 @@ return {
         local langs = require('langs').highlights()
         local installed = ts.get_installed()
 
-        local not_installed = vim.tbl_filter(function(item)
-            return not vim.tbl_contains(langs, item)
-        end, langs)
-
-
-        -- Install those languages not installed
-        if #not_installed > 0 then
-            ts.install(not_installed)
+        for _, name in ipairs(langs) do
+          if not vim.tbl_contains(installed, name) then
+            vim.cmd(':TSInstall ' .. name)
+          end
         end
 
         vim.api.nvim_create_autocmd('FileType', {
