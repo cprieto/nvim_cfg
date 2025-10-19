@@ -4,7 +4,7 @@ return {
     build = ':TSUpdate',
     lazy = false,
     config = function()
-        if not vim.fn.executable('tree-sitter') then
+        if vim.fn.executable('tree-sitter') == 0 then
           vim.notify("tree-sitter cli is not installed\nyou need it for tree-sitter grammars", vim.log.levels.ERROR)
           return
         end
