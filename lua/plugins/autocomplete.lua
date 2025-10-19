@@ -1,7 +1,6 @@
 return {
     'saghen/blink.cmp',
     dependencies = {
-        "folke/lazydev.nvim",
         {
             "xzbdmw/colorful-menu.nvim",
             config = true

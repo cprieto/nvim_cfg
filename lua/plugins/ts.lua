@@ -11,9 +11,9 @@ return {
         local installed = ts.get_installed()
 
         for _, name in ipairs(langs) do
-          if not vim.tbl_contains(installed, name) then
-            vim.cmd(':TSInstall ' .. name)
-          end
+            if not vim.tbl_contains(installed, name) then
+                vim.cmd(':TSInstall ' .. name)
+            end
         end
 
         vim.api.nvim_create_autocmd('FileType', {
