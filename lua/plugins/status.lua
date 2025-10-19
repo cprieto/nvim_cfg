@@ -12,6 +12,7 @@ return {
     opts = {
         options = {
             disabled_filetypes = { 'dashboard', 'snacks_dashboard' },
+            section_separators = { left = '', right = '' },
         },
         extensions = { 'quickfix', 'lazy', 'fzf' },
     }
