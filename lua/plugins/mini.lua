@@ -1,5 +1,19 @@
 return {
     {
+      'nvim-mini/mini.completion',
+      version = false,
+      cond = function() return vim.loop.os_uname().sysname == 'FreeBSD' end,
+      opts = {
+        lsp_completion = {
+          source_func = 'omnifunc',
+        },
+        window = {
+          info = { border = 'single' },
+          signature = { border = 'single' },
+        }
+      },
+    },
+    {
         "nvim-mini/mini.animate",
         event = "VeryLazy",
         cond = vim.g.neovide == nil,
