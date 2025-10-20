@@ -12,10 +12,11 @@ return {
         local ts = require('nvim-treesitter')
         ts.setup()
 
-        local langs = require('langs').highlights()
+        local langs = require 'langs'
+        local highlights = langs.highlights()
         local installed = ts.get_installed()
 
-        for _, name in ipairs(langs) do
+        for _, name in ipairs(highlights) do
             if not vim.tbl_contains(installed, name) then
                 vim.cmd(':TSInstall ' .. name)
             end
@@ -25,6 +26,12 @@ return {
             callback = function(ev)
                 if vim.tbl_contains(installed, ev.match) then
                     vim.treesitter.start()
+                end
+                if langs.has_fold(ev.match) then
+                  vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+                end
+                if langs.has_indent(ev.match) then
+                  vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
                 end
             end
         })

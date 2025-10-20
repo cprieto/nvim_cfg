@@ -20,10 +20,11 @@ local languages = {
             end
         end
     },
-    'cpp',
-    'cuda',
+    { 'cpp', fold = true, indent = true },
+    { 'cuda', fold = true, indent = true },
     { 'cmake', fold = true, indent = true, lsp = 'neocmakelsp' },
-    'vim',
+    { 'vim', fold = true },
+    'vimdoc',
 }
 
 return {
