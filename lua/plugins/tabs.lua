@@ -6,11 +6,13 @@ return {
             close_command = function(n) Snacks.bufdelete(n) end,
             right_mouse_command = function(n) Snacks.bufdelete(n) end,
             diagnostics = "nvim_lsp",
-        }
-    },
-    offsets = {
-        {
-            filetype = "snacks_layout_box",
+            offsets = {
+              {
+                filetype = 'snacks_layout_box',
+                text = '󰙅  File Explorer',
+                separator = true,
+              },
+            }
         },
     },
     config = function(_, opts)

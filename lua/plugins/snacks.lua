@@ -23,11 +23,14 @@ return {
         statuscolumn = { enabled = true },
         -- words = { enabled = true },
         lazygit = { enabled = true },
+        terminal = { enabled = true },
     },
     lazy = false,
     priority = 1000,
+    config = function()
+      vim.cmd [[:tnoremap <C-w> <C-\><C-n><C-w>]]
+    end,
     keys = {
-        { "<leader>lg",      function() Snacks.lazygit() end,                      desc = "Show lazygit" },
         -- Top Pickers & Explorer
         { "<leader><space>", function() Snacks.picker.smart() end,                 desc = "Smart Find Files" },
         { "<leader>,",       function() Snacks.picker.buffers() end,               desc = "Buffers" },
@@ -76,5 +79,9 @@ return {
         { "<leader>gy",      function() Snacks.picker.lsp_type_definitions() end,  desc = "Goto T[y]pe Definition" },
         { "<leader>ss",      function() Snacks.picker.lsp_symbols() end,           desc = "LSP Symbols" },
         { "<leader>sS",      function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
+
+        -- Utils
+        { "<leader>tt", function() Snacks.terminal.toggle() end, desc = "Toggle terminal"},
+        { "<leader>lg",      function() Snacks.lazygit() end,                      desc = "Show lazygit" },
     }
 }

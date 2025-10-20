@@ -1,9 +1,9 @@
 return {
-  "folke/tokyonight.nvim",
+  'gbprod/nord.nvim',
   lazy = false,
   priority = 1000,
   opts = {},
   config = function()
-    vim.cmd [[colorscheme tokyonight]]
+    vim.cmd [[colorscheme nord]]
   end,
 }
