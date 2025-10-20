@@ -3,6 +3,9 @@ return {
   event = "VeryLazy",
   opts = {
     options = {
+      pick = {
+        alphabet = '1234567890',
+      },
       close_command = function(n) Snacks.bufdelete(n) end,
       right_mouse_command = function(n) Snacks.bufdelete(n) end,
       diagnostics = "nvim_lsp",
@@ -25,4 +28,7 @@ return {
       end
     })
   end,
+  keys = {
+    { '<leader>bp', ':BufferLinePick<CR>', desc = "Pick opened buffer" },
+  }
 }
