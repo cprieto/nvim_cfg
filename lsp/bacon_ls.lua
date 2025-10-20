@@ -5,6 +5,6 @@ return {
   root_markers = { '.bacon-locations', 'Cargo.toml' },
   init_options = {},
   capabilities = {
-      general = { positionEncodings = { 'utf-8' } },
+    general = { positionEncodings = { 'utf-8' } },
   },
 }
