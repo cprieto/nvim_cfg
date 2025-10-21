@@ -4,6 +4,7 @@ local languages = {
   { 'lua',  fold = true, indent = true, lsp = 'luals' },
   'luadoc',
   { 'rust', fold = true, indent = true, lsp = 'bacon_ls' },
+  { 'just', fold = true, indent = true, lsp = 'just' },
   'ron',
   'toml',
   {
