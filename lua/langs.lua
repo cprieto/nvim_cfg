@@ -1,35 +1,35 @@
 -- This is mostly used for treesitter main branch
 -- lang, higlight, fold, indent
 local languages = {
-  { 'lua',  fold = true, indent = true, lsp = 'luals' },
   'luadoc',
-  { 'bash', fold = true },
   'regex',
-  { 'make', fold = true },
-  { 'rust', fold = true, indent = true, lsp = 'bacon_ls' },
-  { 'just', fold = true, indent = true, lsp = 'just' },
-  { 'fish', lsp = 'fish-lsp' },
   'ron',
   'toml',
+  'vimdoc',
+  { 'bash',  fold = true },
+  { 'make',  fold = true },
+  { 'vim',   fold = true },
+  { 'cpp',   fold = true,     indent = true },
+  { 'cuda',  fold = true,     indent = true },
+  { 'rust',  fold = true,     indent = true, lsp = 'bacon_ls' },
+  { 'just',  fold = true,     indent = true, lsp = 'just' },
+  { 'lua',   fold = true,     indent = true, lsp = 'luals' },
+  { 'cmake', fold = true,     indent = true, lsp = 'neocmakelsp' },
+  { 'fish',  lsp = 'fish-lsp' },
   {
     'c',
     fold = true,
     indent = true,
     lsp = function()
-      if vim.fn.executable('clangd') then
+      if vim.fn.executable('clangd') == 1 then
         return 'clangd'
-      elseif vim.fn.executable('ccls') then
+      elseif vim.fn.executable('ccls') == 1 then
         return 'ccls'
       else
         return nil
       end
     end
   },
-  { 'cpp',   fold = true, indent = true },
-  { 'cuda',  fold = true, indent = true },
-  { 'cmake', fold = true, indent = true, lsp = 'neocmakelsp' },
-  { 'vim',   fold = true },
-  'vimdoc',
 }
 
 return {
