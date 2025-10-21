@@ -5,6 +5,7 @@ local languages = {
   'luadoc',
   { 'bash', fold = true },
   'regex',
+  { 'make', fold = true },
   { 'rust', fold = true, indent = true, lsp = 'bacon_ls' },
   { 'just', fold = true, indent = true, lsp = 'just' },
   { 'fish', lsp = 'fish-lsp' },
