@@ -3,8 +3,11 @@
 local languages = {
   { 'lua',  fold = true, indent = true, lsp = 'luals' },
   'luadoc',
+  { 'bash', fold = true },
+  'regex',
   { 'rust', fold = true, indent = true, lsp = 'bacon_ls' },
   { 'just', fold = true, indent = true, lsp = 'just' },
+  { 'fish', lsp = 'fish-lsp' },
   'ron',
   'toml',
   {
