@@ -19,6 +19,22 @@ return {
     cond = vim.g.neovide == nil,
   },
   {
+    'nvim-mini/mini.diff',
+    version = false,
+    cond = function() return false end,
+    event = "VeryLazy",
+    opts = {
+      view = {
+        style = "sign",
+        signs = {
+          add = "▎",
+          change = "▎",
+          delete = "",
+        }
+      },
+    },
+  },
+  {
     "nvim-mini/mini.icons",
     lazy = true,
     opts = {

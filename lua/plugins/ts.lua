@@ -6,6 +6,16 @@ return {
   keys = {
     { "<leader>gf", function() vim.lsp.buf.format() end, desc = "Format buffer" },
   },
+  init = function()
+    vim.api.nvim_create_autocmd('BufWritePre', {
+      callback = function()
+        local mode = vim.api.nvim_get_mode().mode
+        if vim.bo.modified == true and mode == 'n' then
+          vim.lsp.buf.format({ async = false })
+        end
+      end,
+    })
+  end,
   config = function()
     if vim.fn.executable('tree-sitter') == 0 then
       vim.notify("tree-sitter cli is not installed\nyou need it for tree-sitter grammars", vim.log.levels.ERROR)
