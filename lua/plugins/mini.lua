@@ -14,6 +14,12 @@ return {
     },
   },
   {
+    'nvim-mini/mini.comment',
+    version = false,
+    event = "VeryLazy",
+    config = true,
+  },
+  {
     "nvim-mini/mini.animate",
     event = "VeryLazy",
     cond = vim.g.neovide == nil,
