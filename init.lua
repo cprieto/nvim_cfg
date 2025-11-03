@@ -16,6 +16,9 @@ require("lazy").setup({
   { import = "plugins" },
 })
 
+-- Enable lsp
+require('langs').enable_lsp()
+
 -- Gutter
 opt.number = true
 opt.numberwidth = 4

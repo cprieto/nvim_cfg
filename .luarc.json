@@ -1,0 +1,8 @@
+{
+    "workspace.library": [
+        "/Users/cprieto/.local/share/nvim/lazy/neodev.nvim/types/stable",
+        "/opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/lua",
+        "/Users/cprieto/Code/nvim_cfg/lua",
+        "${3rd}/luv/library"
+    ]
+}
