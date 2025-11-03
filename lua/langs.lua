@@ -12,6 +12,7 @@ local languages = {
   { 'make',     fold = true, },
   { 'vim',      fold = true, },
   { 'latex',    fold = true, },
+  { 'fish',     lsp = 'fish-lsp' },
   { 'cpp',      fold = true,     indent = true, },
   { 'cuda',     fold = true,     indent = true, },
   { 'html',     fold = true,     indent = true, },
@@ -21,7 +22,7 @@ local languages = {
   { 'just',     fold = true,     indent = true, lsp = 'just' },
   { 'lua',      fold = true,     indent = true, lsp = 'luals' },
   { 'cmake',    fold = true,     indent = true, lsp = 'neocmakelsp' },
-  { 'fish',     lsp = 'fish-lsp' },
+  { 'zig',      fold = true,     indent = true, lsp = 'zls' },
   {
     'c',
     fold = true,
