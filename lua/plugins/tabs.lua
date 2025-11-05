@@ -1,8 +1,10 @@
 return {
   "akinsho/bufferline.nvim",
   event = "VeryLazy",
+  main = 'bufferline',
   opts = {
     options = {
+      separator_style = 'thin',
       pick = {
         alphabet = '1234567890',
       },
@@ -18,16 +20,6 @@ return {
       }
     },
   },
-  config = function(_, opts)
-    require('bufferline').setup(opts)
-    vim.api.nvim_create_autocmd({ 'BufAdd', 'BufDelete' }, {
-      callback = function()
-        vim.schedule(function()
-          pcall(nvim_bufferline)
-        end)
-      end
-    })
-  end,
   keys = {
     { '<leader>bp', ':BufferLinePick<CR>', desc = "Pick opened buffer" },
   }

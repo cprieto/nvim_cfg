@@ -11,6 +11,7 @@ return {
   },
   opts = {
     options = {
+      theme = 'nord',
       disabled_filetypes = { 'dashboard', 'snacks_dashboard' },
       section_separators = { left = '', right = '' },
     },
