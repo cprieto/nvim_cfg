@@ -1,3 +1,9 @@
+local source_icon = {
+  LSP = '󰘧',
+  Buffer = '',
+  Snippets = '',
+}
+
 return {
   'saghen/blink.cmp',
   cond = function() return vim.loop.os_uname().sysname ~= 'FreeBSD' end,
@@ -18,11 +24,20 @@ return {
       menu = {
         border = "single",
         draw = {
-          columns = { { "kind_icon" }, {
-            "label",
-            gap = 1
-          } },
+          columns = {
+            { "source_name", gap = 1 },
+            { "kind_icon" },
+            {
+              "label",
+              gap = 1
+            },
+          },
           components = {
+            source_name = {
+              width = { max = 30 },
+              text = function(ctx) return source_icon[ctx.source_name] or ('[' .. ctx.source_name .. ']') end,
+              highlight = "BlinkCmpSource",
+            },
             label = {
               text = function(ctx)
                 return require("colorful-menu").blink_components_text(ctx)
