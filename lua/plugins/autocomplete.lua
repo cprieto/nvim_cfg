@@ -2,6 +2,7 @@ local source_icon = {
   LSP = '󰘧',
   Buffer = '',
   Snippets = '',
+  Cmdline = '',
 }
 
 return {
@@ -24,6 +25,7 @@ return {
       menu = {
         border = "single",
         draw = {
+          treesitter = { 'lsp' },
           columns = {
             { "source_name", gap = 1 },
             { "kind_icon" },
