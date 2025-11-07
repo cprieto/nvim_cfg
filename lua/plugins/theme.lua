@@ -1,6 +1,7 @@
 return {
   'gbprod/nord.nvim',
   -- 'rebelot/kanagawa.nvim',
+  -- 'olimorris/onedarkpro.nvim',
   lazy = false,
   priority = 1000,
   opts = {},
@@ -8,5 +9,6 @@ return {
     require('nord').setup(opts)
     vim.cmd [[colorscheme nord]]
     -- vim.cmd [[colorscheme kanagawa]]
+    -- vim.cmd [[colorscheme onedark]]
   end,
 }

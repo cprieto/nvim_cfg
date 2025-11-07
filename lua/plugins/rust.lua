@@ -13,10 +13,8 @@ return {
             loadOutDirsFromCheck = true,
             buildScripts = { enable = true },
           },
-          checkOnSave = diagnostics == 'rust-analyzer',
-          diagnostics = {
-            enable = diagnostics == 'rust-analyzer',
-          },
+          checkOnSave = { enable = false, },
+          diagnostics = { enable = false, },
           files = {
             excludeDirs = {
               '.git', 'bin', '.venv', 'venv', 'target'
@@ -34,6 +32,7 @@ return {
     }
   },
   config = function(_, opts)
+    ---@class vim.g
     vim.g.rustaceanvim = vim.tbl_deep_extend("keep", vim.g.rustaceanvim or {}, opts or {})
   end
 }

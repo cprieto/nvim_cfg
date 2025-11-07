@@ -11,10 +11,14 @@ return {
   },
   opts = {
     options = {
-      theme = 'nord',
-      disabled_filetypes = { 'dashboard', 'snacks_dashboard' },
-      section_separators = { left = '', right = '' },
+      theme = 'auto',
+      disabled_filetypes = { 'dashboard', 'snacks_dashboard', },
+      ignored_filetypes = { 'snacks_picker_preview', },
+      ignored_buftypes = { 'nofile', 'terminal', },
+      section_separators = { left = '', right = '' },
+      component_separators = '',
+      -- section_separators = { left = '', right = '' },
     },
-    extensions = { 'quickfix', 'lazy', 'fzf' },
+    extensions = { 'quickfix', 'lazy', 'fzf', 'aerial', },
   }
 }

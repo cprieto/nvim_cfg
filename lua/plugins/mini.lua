@@ -17,12 +17,19 @@ return {
     'nvim-mini/mini.comment',
     version = false,
     event = "VeryLazy",
+    opts = {
+      mappings = {
+        comment = 'cc',
+        comment_line = 'cl',
+        comment_visual = 'cc',
+        text_object = 'cc',
+      },
+    },
     config = true,
   },
   {
     "nvim-mini/mini.animate",
     event = "VeryLazy",
-    cond = vim.g.neovide == nil,
   },
   {
     'nvim-mini/mini.diff',
