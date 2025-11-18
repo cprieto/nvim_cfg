@@ -1,3 +1,9 @@
+local conditions = {
+  hide_in_width = function()
+    return vim.fn.winwidth(0) > 80
+  end,
+}
+
 return {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
@@ -20,5 +26,53 @@ return {
       -- section_separators = { left = '', right = '' },
     },
     extensions = { 'quickfix', 'lazy', 'fzf', 'aerial', },
+    sections = {
+      lualine_b = {
+        {
+          'branch',
+          icon = '',
+          color = { gui = "bold" },
+        },
+        {
+          'diff',
+          symbols = { added = ' ', modified = ' ', removed = ' ' },
+          cond = conditions.hide_in_width,
+        }
+      },
+      lualine_c = {
+        {
+          'diagnostics',
+          sources = { 'nvim_lsp', 'nvim_diagnostic' },
+          symbols = { error = " ", warn = " ", info = " " },
+        },
+        {
+          'filename',
+          file_status = true,
+          path = 1,
+        },
+        {
+          'filetype',
+          icon_only = true,
+          colored = true,
+          padding = 0,
+        },
+      },
+      lualine_x = {
+        {
+          'lsp_status',
+          icon = '',
+          show_name = true,
+        },
+        {
+          'fileformat',
+        },
+        {
+          'encoding',
+        },
+        {
+          'filesize',
+        },
+      }
+    }
   }
 }
