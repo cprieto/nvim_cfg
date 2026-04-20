@@ -9,7 +9,6 @@ return {
   init = function()
     vim.api.nvim_create_autocmd('BufWritePre', {
       callback = function(ev)
-        local id = ev.id
         local clients = vim.lsp.get_clients({ bufnr = ev.buf })
         if #clients == 0 then
           return
