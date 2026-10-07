@@ -1,27 +1,30 @@
 return {
   "mfussenegger/nvim-dap",
   dependencies = {
-    { "mason-org/mason.nvim", opts = {} },
     "nvim-neotest/nvim-nio",
     "rcarriga/nvim-dap-ui",
     "leoluz/nvim-dap-go",
   },
   keys = {
     { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle breakpoint" },
-    { "<leader>dB", function()
-      vim.ui.input({ prompt = "Breakpoint condition: " }, function(condition)
-        if condition and condition ~= "" then require("dap").set_breakpoint(condition) end
-      end)
-    end, desc = "Conditional breakpoint" },
-    { "<leader>dc", function() require("dap").continue() end, desc = "Start / continue debugger" },
-    { "<leader>dn", function() require("dap").step_over() end, desc = "Step over" },
-    { "<leader>di", function() require("dap").step_into() end, desc = "Step into" },
-    { "<leader>do", function() require("dap").step_out() end, desc = "Step out" },
-    { "<leader>dq", function() require("dap").terminate() end, desc = "Stop debugger" },
-    { "<leader>dl", function() require("dap").run_last() end, desc = "Repeat debug session" },
-    { "<leader>du", function() require("dapui").toggle() end, desc = "Toggle debugger UI" },
-    { "<leader>de", function() require("dapui").eval() end, mode = { "n", "x" }, desc = "Evaluate expression" },
-    { "<leader>dr", function() require("dap").repl.toggle() end, desc = "Toggle debugger REPL" },
+    {
+      "<leader>dB",
+      function()
+        vim.ui.input({ prompt = "Breakpoint condition: " }, function(condition)
+          if condition and condition ~= "" then require("dap").set_breakpoint(condition) end
+        end)
+      end,
+      desc = "Conditional breakpoint"
+    },
+    { "<leader>dc", function() require("dap").continue() end,          desc = "Start / continue debugger" },
+    { "<leader>dn", function() require("dap").step_over() end,         desc = "Step over" },
+    { "<leader>di", function() require("dap").step_into() end,         desc = "Step into" },
+    { "<leader>do", function() require("dap").step_out() end,          desc = "Step out" },
+    { "<leader>dq", function() require("dap").terminate() end,         desc = "Stop debugger" },
+    { "<leader>dl", function() require("dap").run_last() end,          desc = "Repeat debug session" },
+    { "<leader>du", function() require("dapui").toggle() end,          desc = "Toggle debugger UI" },
+    { "<leader>de", function() require("dapui").eval() end,            mode = { "n", "x" },               desc = "Evaluate expression" },
+    { "<leader>dr", function() require("dap").repl.toggle() end,       desc = "Toggle debugger REPL" },
   },
   config = function()
     local dap = require("dap")

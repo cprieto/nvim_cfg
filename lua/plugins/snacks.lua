@@ -40,7 +40,7 @@ return {
     { "<leader>/",       function() Snacks.picker.grep() end,                   desc = "Grep" },
     { "<leader>:",       function() Snacks.picker.command_history() end,        desc = "Command History" },
     { "<leader>n",       function() Snacks.picker.notifications() end,          desc = "Notification History" },
-    { "<leader>e",       function() Snacks.explorer({ auto_close = true }) end, desc = "File Explorer" },
+    { "<leader>ee",       function() Snacks.explorer({ auto_close = false }) end, desc = "File Explorer" },
     -- find
     { "<leader>fb",      function() Snacks.picker.buffers() end,                desc = "Buffers" },
     { "<leader>ff",      function() Snacks.picker.files() end,                  desc = "Find Files" },
