@@ -1,6 +1,9 @@
 return {
   "mrcjkb/rustaceanvim",
   lazy = false,
+  keys = {
+    { "<leader>dd", "<cmd>RustLsp debuggables<cr>", ft = "rust", desc = "Debug Rust runnable" },
+  },
   init = function()
     ---@class vim.g
     vim.g.rustaceanvim = vim.tbl_deep_extend("keep", vim.g.rustaceanvim or {}, {

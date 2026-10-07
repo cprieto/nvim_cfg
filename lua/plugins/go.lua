@@ -1,6 +1,9 @@
 return {
   'ray-x/go.nvim',
-  config = true,
+  opts = {
+    -- nvim-dap-go owns debugger setup and the shared debugger mappings.
+    dap_debug = false,
+  },
   dependencies = {
     'ray-x/guihua.lua'
   },
