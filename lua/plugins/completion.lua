@@ -7,7 +7,6 @@ local source_icon = {
 
 return {
   'saghen/blink.cmp',
-  cond = function() return vim.loop.os_uname().sysname ~= 'FreeBSD' end,
   dependencies = {
     {
       "xzbdmw/colorful-menu.nvim",
