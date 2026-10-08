@@ -12,7 +12,7 @@ return {
     -- require('luna').setup(opts)
     -- vim.cmd.colorscheme('luna')
     -- require('nord').setup(opts)
-    require('tidepool').setup(ops)
+    require('tidepool').setup(opts)
     -- vim.cmd [[colorscheme nord]]
     -- vim.cmd [[colorscheme kanagawa]]
     -- vim.cmd [[colorscheme onedark]]
