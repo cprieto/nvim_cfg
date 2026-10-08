@@ -7,6 +7,7 @@ return {
       "antoinemadec/FixCursorHold.nvim",
       "fredrikaverpil/neotest-golang",
       "orjangj/neotest-ctest",
+      "nvim-neotest/neotest-python",
     },
     keys = {
       { "<leader>Tn", function() require("neotest").run.run() end,                     desc = "Run nearest test" },
@@ -37,6 +38,8 @@ return {
           require("rustaceanvim.neotest"),
           require("neotest-golang")({ dap_mode = "dap-go" }),
           require("neotest-ctest").setup({ dap_adapter = "codelldb" }),
+          -- The adapter detects the project's Python virtual environment.
+          require("neotest-python")({ runner = "pytest" }),
         },
       }
     end,
