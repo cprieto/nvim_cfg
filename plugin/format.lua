@@ -2,16 +2,24 @@ vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { desc = "Format buffer" }
 
 vim.api.nvim_create_autocmd('BufWritePre', {
   callback = function(ev)
-    local clients = vim.lsp.get_clients({ bufnr = ev.buf })
+    if not vim.bo[ev.buf].modified then
+      return
+    end
+
+    local clients = vim.lsp.get_clients({ 
+      bufnr = ev.buf,
+      method = "textDocument/formatting",
+    })
+
     if #clients == 0 then
       return
     end
 
-    local client = clients[1]
-    local support_format = client and client.server_capabilities.documentFormattingProvider
-    local mode = vim.api.nvim_get_mode().mode
-    if support_format and vim.bo.modified == true and mode == 'n' then
-      vim.lsp.buf.format({ async = true, bufnr = ev.buf })
-    end
+    vim.lsp.buf.format({
+      bufnr = ev.buf,
+      id = clients[1].id,
+      async = false,
+      timeout = 2000,
+    })
   end
 })
