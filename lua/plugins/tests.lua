@@ -8,6 +8,7 @@ return {
       "fredrikaverpil/neotest-golang",
       "orjangj/neotest-ctest",
       "nvim-neotest/neotest-python",
+      "lawrence-laz/neotest-zig",
     },
     keys = {
       { "<leader>Tn", function() require("neotest").run.run() end,                     desc = "Run nearest test" },
@@ -40,6 +41,7 @@ return {
           require("neotest-ctest").setup({ dap_adapter = "codelldb" }),
           -- The adapter detects the project's Python virtual environment.
           require("neotest-python")({ runner = "pytest" }),
+          require("neotest-zig")({ dap = { adapter = "codelldb" } }),
         },
       }
     end,
