@@ -4,7 +4,7 @@ return {
   opts = {},
   keys = {
     { '<leader>cf', 'zM', desc = 'Fold all code' },
-    { '<leader>cu', 'zR', desc = 'Unfold all code' },
+    { '<leader>cF', 'zR', desc = 'Unfold all code' },
   },
   init = function()
     vim.opt.foldlevelstart = 99

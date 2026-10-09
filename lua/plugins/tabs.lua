@@ -21,6 +21,8 @@ return {
     },
   },
   keys = {
+    { 'gt', '<cmd>BufferLineCycleNext<cr>', desc = "Next buffer" },
+    { 'gT', '<cmd>BufferLineCyclePrev<cr>', desc = "Previous buffer" },
     { '<leader>bp', ':BufferLinePick<CR>', desc = "Pick opened buffer" },
   }
 }
