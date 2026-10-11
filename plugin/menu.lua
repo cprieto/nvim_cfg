@@ -17,6 +17,7 @@ local icon_names = {
   ['Code actions'] = { 'lsp', 'event' },
   ['Go to definition'] = { 'lsp', 'function' },
   ['Find usages'] = { 'lsp', 'reference' },
+  ['Explore code'] = { 'lsp', 'namespace' },
   ['Find implementations'] = { 'lsp', 'interface' },
   ['Inspect'] = { 'lsp', 'property' },
   ['Show Diagnostics'] = { 'lsp', 'event' },
@@ -86,6 +87,7 @@ for name, shortcut in pairs({
   ['Go to definition'] = 'cd', ['Go to declaration'] = 'cD',
   ['Find implementations'] = 'ci', ['Go to type definition'] = 'cy',
   ['Find usages'] = 'cu', ['Format buffer'] = 'gf', ['Code actions'] = 'ca',
+  ['Explore code'] = 'ce',
 }) do
   local suffix = '<Tab><leader>' .. shortcut
   vim.cmd('menutrans ' .. escape(name) .. suffix .. ' ' .. escape(icons[name] .. '  ' .. name) .. suffix)
@@ -112,6 +114,7 @@ vim.cmd [[
   anoremenu 10.140 ]LSP.-Navigation- <Nop>
   nnoremenu 10.150 ]LSP.Find\ usages<Tab><leader>cu <Cmd>lua Snacks.picker.lsp_references()<CR>
   nnoremenu 10.160 ]LSP.Signature\ help <Cmd>lua vim.lsp.buf.signature_help()<CR>
+  nnoremenu 10.170 ]LSP.Explore\ code<Tab><leader>ce <Cmd>Wayfinder<CR>
   anoremenu 10.190 ]LSP.-Actions- <Nop>
   nnoremenu 10.200 ]LSP.Format\ buffer<Tab><leader>gf <Cmd>lua vim.lsp.buf.format()<CR>
   nnoremenu 10.210 ]LSP.Code\ actions<Tab><leader>ca <Cmd>lua require('tiny-code-action').code_action()<CR>
